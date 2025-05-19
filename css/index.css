@@ -6,7 +6,143 @@
     box-sizing: border-box;
 }
 
+/* ==== БАЗОВЫЕ НАСТРОЙКИ ==== */
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #565454;
+    margin: 0;
+    padding: 1rem;
+    background: url('earth.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Segoe UI', sans-serif;
+    color: #f3f4f6;
+    display: flex;
+    justify-content: center;
+}
+
+#container {
+    width: 100%;
+    max-width: 480px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 3rem;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 1rem;
+    border-radius: 12px;
+}
+
+/* ==== Заголовок ==== */
+h1 {
+    font-size: 1.3rem;
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 1rem;
+}
+
+/* ==== ФОРМА ==== */
+form {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    background-color: #222;
+    padding: 0.5rem;
+    border-radius: 32px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+input {
+    flex: 1;
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 32px;
+    outline: none;
+    background: #333;
+    color: #f3f4f6;
+}
+
+button {
+    background: linear-gradient(to bottom, #666, #444);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+button:hover {
+    background: linear-gradient(to bottom, #555, #222);
+}
+
+/* ==== БЛОК ОШИБКИ ==== */
+#error {
+    display: none;
+    margin-top: 0.5rem;
+    padding: 0.75rem 1rem;
+    background-color: rgba(255, 0, 0, 0.5);
+    border-left: 4px solid #f87171;
+    border-radius: 8px;
+    color: #f87171;
+    font-weight: 600;
+    white-space: pre-wrap;
+}
+
+#error.active {
+    display: block;
+}
+
+/* ==== КАРТОЧКА СТРАНЫ ==== */
+#result {
+    margin-top: 1rem;
+}
+
+.country-card {
+    background-color: rgba(20, 20, 30, 0.9);
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    color: #f3f4f6;
+    transition: transform 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.country-card:hover {
+    transform: translateY(-4px);
+}
+
+.country-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.country-flag {
+    width: 100%;
+    border-radius: 12px;
+    max-height: 160px;
+    object-fit: contain;
+}
+
+.country-languages,
+.country-population,
+.country-currency {
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+/* ====  ==== */
+@media (max-width: 480px) {
+    form {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    button {
+        width: 100%;
+        border-radius: 32px;
+    }
 }
